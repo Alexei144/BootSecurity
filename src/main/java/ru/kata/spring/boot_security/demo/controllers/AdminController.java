@@ -39,7 +39,7 @@ class AdminController {
 
     @GetMapping("/new")
     public String newUser(@ModelAttribute("user") User user, Model model) {
-        List<Role> all = (List<Role>) roleRepository.findAll();
+        List<Role> all = roleRepository.findAll();
         model.addAttribute("roles", all);
         return "new";
     }

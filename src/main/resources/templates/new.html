@@ -15,16 +15,16 @@
     <br/>
 
 
+    <label for="roles">Roles:</label>
+    <ul>
+        <li th:each="role : ${roles}">
+            <input type="checkbox" id="role-[[${role.id}]]" name="roleIds" th:value="${role.id}"
+                   th:checked="${user.roles.contains(role)}">
+            <label th:for="role-[[${role.id}]]" th:text="${role.name}"></label>
+        </li>
+    </ul>
 
-    <label>
-        <input type="checkbox" name="roles" value="ADMIN">
-        роль ADMIN
-    </label>
-    <br>
-    <label>
-        <input type="checkbox" name="roles" value="USER">
-        роль USER
-    </label>
+
 </form>
 
 
