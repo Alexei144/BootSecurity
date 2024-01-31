@@ -15,22 +15,23 @@
     <br/>
 
 
-    <label for="roles">Roles:</label>
-    <ul>
-        <li th:each="role : ${roles}">
-            <input type="checkbox" id="role-[[${role.id}]]" name="roleIds" th:value="${role.id}"
-                   th:checked="${user.roles.contains(role)}">
-            <label th:for="role-[[${role.id}]]" th:text="${role.name}"></label>
-        </li>
-    </ul>
+    <label> Roles:
+        <input type="checkbox" name="roles"
+               th:each="role : ${roles}"
+               th:text="${role.getName()}"
+               th:value="${role.getId()}"
+               th:field="*{roles}"
+        />
+    </label>
 
-
+        <input type="submit" value="Create!"/>
 </form>
 
+<input type="button" value="Logout"
+       onclick="window.location.href ='/logout'"/>
 
 
-    <input type="submit" value="Create!"/>
-</form>
+
 
 </body>
 </html>
