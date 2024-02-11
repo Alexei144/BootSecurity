@@ -13,7 +13,15 @@
     <label for="password" class="form-label">Enter password:</label>
     <input type="text" minlength="2" maxlength="20" class="form-control" th:field="*{password}" id="password"/>
     <br/>
-
+    <label> Roles:
+        <input type="checkbox" name="roles"
+               th:each="role : ${roles}"
+               th:text="${role.getName()}"
+               th:value="${role.getId()}"
+               th:field="*{roles}"
+        />
+    </label>
+    <br/>
 
     <input type="submit" value="Update!"/>
 </form>

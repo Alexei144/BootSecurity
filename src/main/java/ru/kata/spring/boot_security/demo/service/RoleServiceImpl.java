@@ -20,4 +20,9 @@ public class RoleServiceImpl {
     public Set<Role> roles(Long id) {
        return roleRepository.findAllById(id);
     }
+
+    public void add(Role role) {
+        roleRepository.save(role);
+    }
+
 }

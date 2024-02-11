@@ -21,11 +21,6 @@ public class UserController {
         this.userService = userService;
     }
 
-//    @GetMapping()
-//    public String show(@PathVariable("id") Long id, Model model) {
-//        model.addAttribute("user", userService.findOne(id));
-//        return "user";
-//    }
 
     @GetMapping()
     public String getUser(ModelMap model, Principal principal) {

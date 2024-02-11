@@ -30,7 +30,7 @@ public class UserServiceImpl {
     }
 
     public User findByName (String username) {
-        Optional<User> byUser = Optional.ofNullable(userRepository.findByUsername(username));
+        Optional<User> byUser = userRepository.findByUsername(username);
         return byUser.orElse(null);
     }
 
